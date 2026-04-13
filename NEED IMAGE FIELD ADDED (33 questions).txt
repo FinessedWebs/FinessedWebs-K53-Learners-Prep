@@ -1,0 +1,51 @@
+| #      | Question                                                         | Suggested Image Filename  | Sign Description                                               |
+| ------ | ---------------------------------------------------------------- | ------------------------- | -------------------------------------------------------------- |
+| 9      | "What does a red octagon sign indicate?"                         | `octagon-stop.png`        | Red octagon, white border, STOP text                           |
+| 10     | "What does an inverted triangle sign mean?"                      | `triangle-yield.png`      | Red border, white background, black text YIELD/GIVE WAY        |
+| 11     | "What does a circular sign with red border indicate?"            | `circle-prohibition.png`  | Red circle, white background (generic prohibition)             |
+| 12     | "What does a blue circular sign indicate?"                       | `blue-command.png`        | Blue circle, white symbol (e.g., arrow straight)               |
+| 13     | "What does a rectangular green sign indicate?"                   | `green-info.png`          | Green rectangle, white text/directions                         |
+| 14     | "What does a triangular sign with red border indicate?"          | `triangle-warning.png`    | Red border, white background, black symbol                     |
+| 15     | "What does a yellow diamond sign indicate?"                      | `diamond-temporary.png`   | Yellow diamond, black symbol (temporary warning)               |
+| 16     | "What does a sign with '80' in red circle mean?"                 | `speed-limit-80.png`      | Red circle, black 80                                           |
+| 17     | "What does a sign with '60' in blue circle mean?"                | `minimum-speed-60.png`    | Blue circle, white 60                                          |
+| 18     | "What does a white bar across the road mean?"                    | `stop-line.png`           | Thick white line across road                                   |
+| 19     | "What does a broken white line indicate?"                        | `broken-white-line.png`   | Dashed white line (lane division)                              |
+| 20     | "What does a solid white line indicate?"                         | `solid-white-line.png`    | Solid white line (no crossing)                                 |
+| 21     | "What does a yellow broken line indicate?"                       | `yellow-broken-line.png`  | Yellow dashed line (one-way road division)                     |
+| 22     | "What does a sign with 'No U-Turn' mean?"                        | `no-u-turn.png`           | Red circle, black U-turn arrow crossed out                     |
+| 23     | "What does a 'No Entry' sign indicate?"                          | `no-entry-sign.png`       | Red circle, white horizontal bar                               |
+| 24     | "What does a pedestrian crossing marking (zebra crossing) mean?" | `zebra-crossing.png`      | Black and white stripes on road                                |
+| 25     | "What does a 'Sharp Curve Ahead' sign warn about?"               | `sharp-curve.png`         | Black curved arrow on triangular warning sign                  |
+| 26     | "What does a 'T-Junction Ahead' sign indicate?"                  | `t-junction.png`          | T-shape symbol on triangular warning sign                      |
+| 27     | "What does a 'Two-Way Traffic' sign warn about?"                 | `two-way-traffic.png`     | Two arrows pointing opposite directions                        |
+| 28     | "What does a 'School Ahead' sign indicate?"                      | `school-ahead.png`        | Two children walking symbol                                    |
+| 29     | "What does a 'Railway Crossing' sign with cross indicate?"       | `railway-crossing.png`    | Crossbuck X symbol or train symbol                             |
+| 30     | "What does a 'Slippery Road' sign warn about?"                   | `slippery-road.png`       | Car with skid marks symbol                                     |
+| 31     | "What does a 'Steep Descent' sign indicate?"                     | `steep-descent.png`       | Arrow pointing down at angle                                   |
+| 32     | "What does a 'Narrow Bridge' sign warn about?"                   | `narrow-bridge.png`       | Bridge with narrow width symbol                                |
+| 33     | "What does a 'Road Works' sign indicate?"                        | `road-works.png`          | Person with shovel or equipment symbol                         |
+| 34     | "What does a 'Detour' sign indicate?"                            | `detour.png`              | Curved arrow showing diversion route                           |
+| 35     | "What does a 'No Parking' sign mean?"                            | `no-parking.png`          | Red circle, blue background, red diagonal line (P crossed out) |
+| 36     | "What does a 'No Stopping' sign mean?"                           | `no-stopping.png`         | Red circle, blue background, red X (no stopping)               |
+| 37     | "What does a 'Bus Stop' sign indicate?"                          | `bus-stop.png`            | Bus symbol on blue rectangle or red circle with bus            |
+| 38     | "What does a 'Taxi Rank' sign indicate?"                         | `taxi-rank.png`           | Taxi symbol on blue rectangle                                  |
+| 39     | "What does a 'Disabled Parking' sign indicate?"                  | `disabled-parking.png`    | Wheelchair symbol on blue background                           |
+| **40** | **"What does a 'Freeway' sign indicate?"**                       | **`freeway-begins.png`**  | **Blue rectangle with white freeway symbol**                   |
+| 41     | "What does a 'End of Freeway' sign mean?"                        | `end-freeway.png`         | Blue rectangle with freeway symbol + end bar                   |
+| 42     | "What does a 'Distance to Exit' sign with 3 bars indicate?"      | `distance-exit-3.png`     | Three horizontal bars (300m)                                   |
+| 43     | "What does a 'No Overtaking' sign indicate?"                     | `no-overtaking.png`       | Red circle, two cars with red diagonal line                    |
+| 44     | "What does a 'End of No Overtaking' sign mean?"                  | `end-no-overtaking.png`   | Same as no overtaking but with black diagonal end line         |
+| 45     | "What does a 'Traffic Light Ahead' sign warn about?"             | `traffic-light-ahead.png` | Traffic light symbol on triangular warning sign                |
+| 46     | "What does a 'Roundabout Ahead' sign indicate?"                  | `roundabout-ahead.png`    | Circular arrows symbol on warning sign                         |
+| 47     | "What does a 'Falling Rocks' sign warn about?"                   | `falling-rocks.png`       | Rocks falling symbol on triangular sign                        |
+| 48     | "What does a 'Cattle Crossing' sign indicate?"                   | `cattle-crossing.png`     | Cow symbol on triangular warning sign                          |
+| 49     | "What does a 'Wild Animals' sign warn about?"                    | `wild-animals.png`        | Antelope/deer symbol on triangular warning sign                |
+| 50     | "What does a 'Hospital' sign indicate?"                          | `hospital.png`            | White H on blue square or red cross                            |
+| 51     | "What does a 'Fuel Station' sign indicate?"                      | `fuel-station.png`        | Petrol pump symbol on blue rectangle                           |
+| 52     | "What does a 'Information' sign (letter 'i') indicate?"          | `information.png`         | Letter "i" on blue square                                      |
+| 53     | "What does a 'No Through Road' sign mean?"                       | `no-through-road.png`     | Rectangle with T and end bar (dead end)                        |
+| 54     | "What does a 'Priority Road' sign indicate?"                     | `priority-road.png`       | Yellow diamond with white border (priority)                    |
+| 55     | "What does a 'End of Priority Road' sign mean?"                  | `end-priority-road.png`   | Same priority sign with black diagonal line                    |
+| 56     | "What does a yield sign mean?"                                   | `yield-sign.png`          | Inverted triangle, red border, white background                |
+| 57     | "What does a speed hump warning sign mean?"                      | `speed-hump.png`          | Hump/bump symbol on triangular warning sign                    |
