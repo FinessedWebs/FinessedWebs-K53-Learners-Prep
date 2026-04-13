@@ -7,8 +7,8 @@ function loadComponent(id, file) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    loadComponent("nav", "/components/nav.html");
-    loadComponent("footer", "/components/footer.html");
+    loadComponent("nav", "components/nav.html");
+    loadComponent("footer", "components/footer.html");
 });
 
 function toggleExam() {
