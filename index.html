@@ -3,9 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FinessedWebs K53 Learners Prep </title>
+    <title>FinessedWebs K53 Learners Prep</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
+    <!-- NAV -->
+    <div id="nav"></div>
+
+    <main style="padding: 20px;">
+        <h1>Welcome to K53 Learners Practice</h1>
+        <p>Start practicing and pass your learners test.</p>
+
+        <div class="exam-container">
+
+            <div class="exam-card">
+
+                <!-- Header -->
+                <div class="exam-header" onclick="toggleMain()">
+                    <span>Official K53 Exam</span>
+                    <span id="main-arrow">▼</span>
+                </div>
+
+                <!-- Vehicle Options -->
+                <div id="vehicle-section" class="exam-content">
+
+                    <div class="vehicle-card">
+                        <button class="vehicle-btn" onclick="toggleVehicle('light')">
+                            Light Vehicle
+                        </button>
+                        <div id="light" class="vehicle-content"></div>
+                    </div>
+
+                    <div class="vehicle-card">
+                        <button class="vehicle-btn" onclick="toggleVehicle('heavy')">
+                            Heavy Vehicle
+                        </button>
+                        <div id="heavy" class="vehicle-content"></div>
+                    </div>
+
+                    <div class="vehicle-card">
+                        <button class="vehicle-btn" onclick="toggleVehicle('motorcycle')">
+                            Motorcycle
+                        </button>
+                        <div id="motorcycle" class="vehicle-content"></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
     
+
+    <script src="js/layout.js"></script>
 </body>
 </html>

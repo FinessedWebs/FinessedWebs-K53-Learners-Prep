@@ -1,0 +1,201 @@
+:root {
+    --primary: #d32f2f;     /* Red */
+    --secondary: #1976d2;   /* Blue */
+    --background: #f5f5f5;
+    --surface: #ffffff;
+    --text: #1f1f1f;
+}
+
+/* Reset */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--background);
+}
+
+/* NAVBAR */
+.navbar {
+    background: var(--surface);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.nav-logo {
+    font-weight: bold;
+    color: var(--primary);
+    font-size: 20px;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+/* FOOTER */
+.footer {
+    background: var(--primary);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* BUTTON (Material feel) */
+.btn {
+    background: var(--secondary);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.exam-container {
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+/* Card */
+.exam-card {
+    background: var(--surface);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.exam-card:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* Header */
+.exam-header {
+    padding: 18px;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--primary);
+}
+
+/* Hidden Content */
+.exam-content {
+    display: none;
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+.exam-content ul {
+    padding-left: 20px;
+}
+
+.exam-content li {
+    margin: 8px 0;
+}
+
+/* Note */
+.note {
+    font-size: 14px;
+    margin-top: 15px;
+    color: #555;
+}
+
+/* Vehicle buttons */
+.vehicle-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Continue button */
+.continue-btn {
+    margin-top: 20px;
+    width: 100%;
+    background: var(--primary);
+}
+
+.vehicle-btn {
+    width: 100%;
+    text-align: left;
+    padding: 14px;
+    border: none;
+    background: var(--secondary);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.vehicle-card {
+    margin-bottom: 10px;
+}
+
+.vehicle-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    background: #fafafa;
+    border-radius: 10px;
+    margin-top: 5px;
+    padding: 0 15px;
+}
+
+/* Add padding only when open */
+.vehicle-content.open {
+    padding: 15px;
+}
+
+.exam-info ul {
+    padding-left: 20px;
+}
+
+.exam-info li {
+    margin: 6px 0;
+}
+
+.exam-wrapper {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.option {
+    display: block;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    background: #eee;
+    cursor: pointer;
+}
+
+.correct {
+    background: #4caf50;
+    color: white;
+}
+
+.wrong {
+    background: #f44336;
+    color: white;
+}

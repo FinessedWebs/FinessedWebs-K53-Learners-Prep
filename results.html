@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+</head>
+<body>
+
+<h2>Results</h2>
+
+<div id="results"></div>
+
+<script>
+const score = JSON.parse(localStorage.getItem("results"));
+
+const pass =
+    score.roadRules >= 22 &&
+    score.roadSigns >= 23 &&
+    score.vehicleControls >= 6;
+
+document.getElementById("results").innerHTML = `
+    <p>Road Rules: ${score.roadRules}</p>
+    <p>Road Signs: ${score.roadSigns}</p>
+    <p>Vehicle Controls: ${score.vehicleControls}</p>
+    <h2>${pass ? "PASS ✅" : "FAIL ❌"}</h2>
+`;
+</script>
+
+</body>
+</html>
