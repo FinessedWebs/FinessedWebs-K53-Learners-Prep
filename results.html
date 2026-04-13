@@ -9,20 +9,42 @@
 
 <div id="results"></div>
 
+<button onclick="viewAnswers()">View Answers</button>
+
 <script>
-const score = JSON.parse(localStorage.getItem("results"));
+function viewAnswers() {
+    window.location.href = "review.html";
+}
+</script>
+
+<script>
+const score = JSON.parse(localStorage.getItem("results")) || {};
+const timeTaken = localStorage.getItem("timeTaken") || 0;
+
+const total =
+    score.roadRules + score.roadSigns + score.vehicleControls;
+
+const percentage = Math.round((total / 68) * 100);
 
 const pass =
     score.roadRules >= 22 &&
     score.roadSigns >= 23 &&
     score.vehicleControls >= 6;
 
+const minutes = Math.floor(timeTaken / 60);
+const seconds = timeTaken % 60;
+
 document.getElementById("results").innerHTML = `
     <p>Road Rules: ${score.roadRules}</p>
     <p>Road Signs: ${score.roadSigns}</p>
     <p>Vehicle Controls: ${score.vehicleControls}</p>
+
+    <h3>Score: ${percentage}%</h3>
+    <p>Time Taken: ${minutes}m ${seconds}s</p>
+
     <h2>${pass ? "PASS ✅" : "FAIL ❌"}</h2>
 `;
+</script>
 </script>
 
 </body>

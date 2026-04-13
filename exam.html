@@ -20,6 +20,11 @@
     <!-- EXAM SCREEN -->
     <div id="exam-screen" style="display:none;">
 
+        <!-- ✅ MOVE PROGRESS BAR HERE -->
+        <div class="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+
         <div class="top-bar">
             <span id="category"></span>
             <span id="progress"></span>
@@ -34,10 +39,17 @@
             Next
         </button>
 
+        <button id="prevBtn" class="btn" onclick="prevQuestion()">
+            Previous
+        </button>
+
     </div>
 
 </div>
 
+<!-- ⚠️ IMPORTANT: questionBank MUST load BEFORE exam.js -->
+<script src="js/questionBank.js"></script>
 <script src="js/exam.js"></script>
+
 </body>
 </html>

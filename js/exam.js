@@ -959,21 +959,24 @@ const questionBank = {
         }
     ]
 };
-
+let startTime;
 let questions = [];
 let currentIndex = 0;
+
 let score = {
     roadRules: 0,
     roadSigns: 0,
     vehicleControls: 0
 };
 
+let userAnswers = [];
 let timerInterval;
 let timeLeft = 60 * 60;
 
 // START EXAM
 function startExam(timed) {
     localStorage.setItem("timedMode", timed);
+    startTime = Date.now();
 
     document.getElementById("start-screen").style.display = "none";
     document.getElementById("exam-screen").style.display = "block";
@@ -985,7 +988,7 @@ function startExam(timed) {
     showQuestion();
 }
 
-// BUILD EXAM (shuffle)
+// BUILD EXAM
 function buildExam() {
     questions = [
         ...getRandomQuestions(questionBank.roadRules, 30),
@@ -998,15 +1001,10 @@ function buildExam() {
 
 function getRandomQuestions(array, count) {
     const shuffled = shuffle([...array]);
-
-    if (shuffled.length < count) {
-        console.warn(`Not enough questions in ${array[0]?.category}`);
-    }
-
     return shuffled.slice(0, count);
 }
 
-// SHUFFLE FUNCTION
+// SHUFFLE
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -1017,26 +1015,40 @@ function shuffle(array) {
 
 // SHOW QUESTION
 function showQuestion() {
+    if (!questions.length) {
+        console.error("No questions loaded");
+        return;
+    }
+
     const q = questions[currentIndex];
 
-if (q.image) {
-    const img = document.createElement("img");
-    img.src = "images/" + q.image;
-    img.style.maxWidth = "200px";
-    document.getElementById("question").appendChild(img);
-}
+    const questionEl = document.getElementById("question");
+    questionEl.innerHTML = q.question;
+
+    // IMAGE FIX
+    if (q.image) {
+        const img = document.createElement("img");
+        img.src = "images/" + q.image;
+        img.style.maxWidth = "200px";
+        questionEl.appendChild(img);
+    }
 
     document.getElementById("category").innerText = q.category;
     document.getElementById("progress").innerText =
         `Question ${currentIndex + 1} of ${questions.length}`;
 
-    document.getElementById("question").innerText = q.question;
+    // PROGRESS BAR SAFE
+    const bar = document.getElementById("progress-bar");
+    if (bar) {
+        const progressPercent = ((currentIndex + 1) / questions.length) * 100;
+        bar.style.width = progressPercent + "%";
+    }
 
     const optionsDiv = document.getElementById("options");
     optionsDiv.innerHTML = "";
 
-    // 🔥 Shuffle options safely
     const shuffledOptions = shuffle([...q.options]);
+    const saved = userAnswers[currentIndex];
 
     shuffledOptions.forEach(opt => {
         const div = document.createElement("div");
@@ -1045,21 +1057,52 @@ if (q.image) {
 
         div.onclick = () => selectAnswer(div, opt, q);
 
+        // RESTORE ANSWER
+        if (saved) {
+            if (opt === saved.selected) {
+                div.classList.add(
+                    saved.selected === saved.correct ? "correct" : "wrong"
+                );
+            }
+
+            if (opt === saved.correct) {
+                div.classList.add("correct");
+            }
+
+            div.onclick = null;
+        }
+
         optionsDiv.appendChild(div);
     });
 
-    document.getElementById("nextBtn").style.display = "none";
+    document.getElementById("nextBtn").style.display = saved ? "block" : "none";
+
+    // HIDE PREV ON FIRST QUESTION
+    document.getElementById("prevBtn").style.display =
+        currentIndex === 0 ? "none" : "inline-block";
 }
 
 // SELECT ANSWER
 function selectAnswer(element, selectedOption, question) {
     const options = document.querySelectorAll(".option");
 
+    userAnswers[currentIndex] = {
+        selected: selectedOption,
+        correct: question.answer,
+        question: question.question,
+        category: question.category
+    };
+
     options.forEach(opt => opt.onclick = null);
 
     if (selectedOption === question.answer) {
         element.classList.add("correct");
-        score[question.category]++;
+
+        // SAFE SCORING
+        if (question.category === "roadRules") score.roadRules++;
+        if (question.category === "roadSigns") score.roadSigns++;
+        if (question.category === "vehicleControls") score.vehicleControls++;
+
     } else {
         element.classList.add("wrong");
 
@@ -1085,6 +1128,14 @@ function nextQuestion() {
     showQuestion();
 }
 
+// PREVIOUS
+function prevQuestion() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        showQuestion();
+    }
+}
+
 // TIMER
 function startTimer() {
     timerInterval = setInterval(() => {
@@ -1105,6 +1156,12 @@ function startTimer() {
 
 // FINISH
 function finishExam() {
+    const endTime = Date.now();
+    const timeTaken = Math.floor((endTime - startTime) / 1000);
+
     localStorage.setItem("results", JSON.stringify(score));
+    localStorage.setItem("answers", JSON.stringify(userAnswers));
+    localStorage.setItem("timeTaken", timeTaken);
+
     window.location.href = "results.html";
 }

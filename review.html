@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Review Answers</title>
+</head>
+<body>
+
+<h2>Review Answers</h2>
+
+<div class="progress-container">
+    <div id="progress-bar"></div>
+</div>
+
+<button onclick="filterAnswers('all')">All</button>
+<button onclick="filterAnswers('correct')">Correct</button>
+<button onclick="filterAnswers('wrong')">Wrong</button>
+
+<div id="review"></div>
+
+<script>
+const answers = JSON.parse(localStorage.getItem("answers")) || [];
+
+console.log("Loaded answers:", answers);
+
+
+
+function render(type) {
+    const container = document.getElementById("review");
+    container.innerHTML = "";
+    
+if (answers.length === 0) {
+    container.innerHTML = "<p>No answers found.</p>";
+    return;
+}
+    answers.forEach(a => {
+        const isCorrect = a.selected === a.correct;
+
+        if (type === "correct" && !isCorrect) return;
+if (type === "wrong" && isCorrect) return;
+
+
+
+        const div = document.createElement("div");
+        div.style.border = "1px solid #ccc";
+        div.style.padding = "10px";
+        div.style.margin = "10px 0";
+
+        div.innerHTML = `
+            <p><strong>${a.question}</strong></p>
+            <p>Your answer: <span style="color:${isCorrect ? 'green' : 'red'}">${a.selected}</span></p>
+            <p>Correct answer: <span style="color:green">${a.correct}</span></p>
+        `;
+
+        container.appendChild(div);
+    });
+}
+
+function filterAnswers(type) {
+    render(type);
+}
+
+render("all");
+</script>
+
+</body>
+</html>
